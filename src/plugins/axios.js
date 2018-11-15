@@ -1,4 +1,5 @@
 // 用于http请求插件, 使用前先安装
+// 参考：https://www.npmjs.com/package/axios
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'

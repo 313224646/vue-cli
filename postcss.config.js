@@ -4,6 +4,7 @@
  * postcss-px-to-viewport: css单位的转换
  * postcss-cssnext： 添加浏览器前缀
  * cssnano：压缩和清理css代码
+ * postcss-viewport-units: 主要是给CSS的属性添加content的属性
  */
 module.exports = {
   "plugins": {
@@ -16,9 +17,12 @@ module.exports = {
       viewportHeight: 1334,
       unitPrecision: 3,
       viewportUnit: 'vw',
-      selectorBlackList: ['.ignore', '.hairlines'],
+      selectorBlackList: ['.ignore', '.hairlines', 'mint'],
       minPixelValue: 1,
       mediaQuery: false
+    },
+    "postcss-viewport-units": {
+      filterRule: rule => rule.selector.indexOf('::after') === -1 && rule.selector.indexOf('::before') === -1 && rule.selector.indexOf(':after') === -1 && rule.selector.indexOf(':before') === -1
     },
     "cssnano": {
       preset: "advanced",
