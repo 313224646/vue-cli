@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+// import './plugins/axios'
+// import './plugins/swiper'
+// import './plugins/vee-validate'
+// import './plugins/vue-touch-ripple'
+// import './plugins/mint-ui'
 
 Vue.config.productionTip = false
 
