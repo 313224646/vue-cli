@@ -9,7 +9,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 @import './assets/css/reset.css'
 </style>
 
