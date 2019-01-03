@@ -35,7 +35,7 @@ export default {
 <style lang="stylus">
 @import './assets/css/reset.css'
 .slide-left-enter-active, .slide-left-leave-active {
-  transition: all .1s linear;
+  transition: all .2s linear;
 }
 .slide-left-enter {
   position: absolute !important;
@@ -48,15 +48,15 @@ export default {
 }
 
 .slide-right-enter-active, .slide-right-leave-active {
-  transition: all .1s linear;
+  transition: all .2s linear;
 }
 .slide-right-enter {
   position: absolute;
-  opacity: 0;
+  top: 0;
+  transform: translateX(-100vw);
 }
 .slide-right-leave-to {
   position: absolute;
-  transform: translateX(100vw);
 }
 </style>
 
