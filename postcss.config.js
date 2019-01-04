@@ -13,11 +13,11 @@ module.exports = {
     "postcss-aspect-ratio-mini": {},
     "postcss-cssnext": {},
     "postcss-px-to-viewport": {
-      viewportWidth: 750,
-      viewportHeight: 1334,
-      unitPrecision: 3,
+      viewportWidth: 375,
+      viewportHeight: 667,
+      unitPrecision: 2,
       viewportUnit: 'vw',
-      selectorBlackList: ['.ignore', '.hairlines', 'mint'],
+      selectorBlackList: ['.ignore', '.hairlines'],
       minPixelValue: 1,
       mediaQuery: false
     },

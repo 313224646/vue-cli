@@ -6,8 +6,6 @@ import './plugins/viewport-units-buggyfill'
 // import './plugins/axios'
 // import './plugins/swiper'
 // import './plugins/vee-validate'
-// import './plugins/vue-touch-ripple'
-// import './plugins/mint-ui'
 
 Vue.config.productionTip = false
 

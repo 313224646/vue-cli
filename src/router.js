@@ -9,12 +9,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: () => import('./views/Home')
+      component: () => import('./views/Home'),
+      meta: {
+        level: 1
+      }
     },
     {
       path: '*',
-      name: 'home',
       component: () => import('./views/Home')
     }
   ],

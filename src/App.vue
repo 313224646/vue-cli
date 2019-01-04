@@ -1,8 +1,9 @@
 <template>
   <div id="app">
     <transition :name="pageTransitionName">
-      <!-- 默认懒加载，若不需要，请在路由修改 -->
-      <keep-alive>
+      <!-- 默认全局缓存页面 -->
+      <!-- 组件名字以-nka结尾都的文件都不缓存 “not keep alive” -->
+      <keep-alive :exclude="/-nka$/">
         <router-view/>
       </keep-alive>
     </transition>
@@ -13,51 +14,31 @@ export default {
   name: 'app',
   data () {
     return {
-      pageTransitionName: ''
+      pageTransitionName: 'fade'
     }
   },
   watch: {
     '$route' (to, from) {
-      // 根据路径深度选择不同过渡效果
-      const toDepth = to.path.split('/').filter(item => {
-        return item.length !== 0
-      }).length
-      const fromDepth = from.path.split('/').filter(item => {
-        return item.length !== 0
-      }).length
-      console.log(toDepth, fromDepth)
-      this.pageTransitionName = toDepth <= fromDepth ? 'slide-right' : 'slide-left'
+      // 监听路由变更设置过渡效果
+      if (!from.meta.level) { // 判定为刷新操作
+        this.pageTransitionName = 'fade'
+      } else {
+        const toLevel = parseInt(to.meta.level)
+        const fromLevel = parseInt(from.meta.level)
+        if (toLevel > fromLevel) { // 右滑
+          this.pageTransitionName = 'slide-right'
+        } else { // 左滑
+          this.pageTransitionName = 'slide-left'
+        }
+      }
     }
   }
 }
 </script>
 
 <style lang="stylus">
-@import './assets/css/reset.css'
-.slide-left-enter-active, .slide-left-leave-active {
-  transition: all .2s linear;
-}
-.slide-left-enter {
-  position: absolute !important;
-  top: 0;
-  transform: translateX(100vw);
-}
-.slide-left-leave-to {
-  position: absolute !important;
-  opacity: 0;
-}
-
-.slide-right-enter-active, .slide-right-leave-active {
-  transition: all .2s linear;
-}
-.slide-right-enter {
-  position: absolute;
-  top: 0;
-  transform: translateX(-100vw);
-}
-.slide-right-leave-to {
-  position: absolute;
-}
+@import '~@/assets/stylus/page-transition.styl'
+@import '~@/assets/stylus/reset.styl'
 </style>
 
 
