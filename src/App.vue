@@ -20,12 +20,12 @@ export default {
   watch: {
     '$route' (to, from) {
       // 监听路由变更设置过渡效果
-      if (!from.meta.level) { // 判定为刷新操作
+      if (typeof from.meta.level === 'undefined') { // 判定为刷新操作
         this.pageTransitionName = 'fade'
       } else {
         const toLevel = parseInt(to.meta.level)
         const fromLevel = parseInt(from.meta.level)
-        if (toLevel > fromLevel) { // 右滑
+        if (toLevel < fromLevel) { // 右滑
           this.pageTransitionName = 'slide-right'
         } else { // 左滑
           this.pageTransitionName = 'slide-left'
