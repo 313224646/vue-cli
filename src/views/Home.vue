@@ -5,11 +5,7 @@
 
 <script>
 export default {
-  name: 'home',
-  created () {
-    this.axios.get('/api/wx/getWeather').then(() => {
-    })
-  }
+  name: 'home'
 }
 </script>
 

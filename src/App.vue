@@ -14,14 +14,14 @@ export default {
   name: 'app',
   data () {
     return {
-      pageTransitionName: 'fade'
+      pageTransitionName: 'refresh'
     }
   },
   watch: {
     '$route' (to, from) {
       // 监听路由变更设置过渡效果
       if (typeof from.meta.level === 'undefined') { // 判定为刷新操作
-        this.pageTransitionName = 'fade'
+        this.pageTransitionName = 'refresh'
       } else {
         const toLevel = parseInt(to.meta.level)
         const fromLevel = parseInt(from.meta.level)

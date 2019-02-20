@@ -20,7 +20,12 @@ export default new Router({
     }
   ],
   // 默认跳转页面滚动到顶部
-  scrollBehavior() {
-    return { x: 0, y: 0 }
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      to.meta.savedPosition = savedPosition
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
   }
 })

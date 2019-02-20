@@ -33,6 +33,15 @@ axios.interceptors.request.use(function (config) {
 
 // 统一响应拦截器
 axios.interceptors.response.use(function (res) {
+  // 后端返回Data数据格式：
+  /**
+   * data: {
+   *  data: String / Number
+   *  msg: String
+   *  status: 'success' / 'error'
+   * }
+   */
+  // 在返回status为error状态下，页面会直接弹出msg信息展示
   if (res.data.status === 'success') {
     let data
     try {
