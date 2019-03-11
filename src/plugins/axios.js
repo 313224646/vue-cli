@@ -31,31 +31,15 @@ axios.interceptors.request.use(function (config) {
   return Promise.reject(error)
 })
 
-// 统一响应拦截器
+// 全局响应拦截器
 axios.interceptors.response.use(function (res) {
-  // 后端返回Data数据格式：
-  /**
-   * data: {
-   *  data: String / Number
-   *  msg: String
-   *  status: 'success' / 'error'
-   * }
-   */
-  // 在返回status为error状态下，页面会直接弹出msg信息展示
-  if (res.data.status === 'success') {
-    let data
-    try {
-      data = JSON.parse(res.data.data) // 通常将数据转换成json格式
-    } catch (e) {
-      data = res.data // 转换失败可能数据是其他格式，直接返回
-    }
-    return data
+  let data = res.data
+  if (data.status === 'success') {
+    return JSON.parse(data.data)
   } else {
-    // 响应返回结果错误
-    return Promise.reject()
+    return Promise.reject('数据请求异常')
   }
 }, function (err) {
-  // 响应状态错误
   return Promise.reject(err)
 })
 
