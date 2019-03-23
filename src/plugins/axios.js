@@ -3,15 +3,14 @@
 import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import { baseHttpUrl } from '@/tool/baseUrl'
 
-axios.defaults.baseURL = baseHttpUrl
+axios.defaults.baseURL = '' // 全局设置请求前缀
 
 Vue.use(VueAxios, axios)
 
 // 统一请求拦截器
 axios.interceptors.request.use(function (config) {
-  // notInterceptors：不拦截
+  // notInterceptors：不拦截请求
   // Demo：
   // axios.get(`url...`, {
   //   data: {
@@ -22,7 +21,6 @@ axios.interceptors.request.use(function (config) {
     return
   } else {
     // 全局loding设置
-    // ...
   }
   return config;
 }, function (error) {
