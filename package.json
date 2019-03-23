@@ -34,6 +34,7 @@
     "postcss-px-to-viewport": "^0.0.3",
     "postcss-url": "^8.0.0",
     "postcss-viewport-units": "^0.1.6",
+    "style-resources-loader": "^1.2.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue-template-compiler": "^2.5.17"
