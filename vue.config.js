@@ -24,7 +24,7 @@ function addStyleResource(rule) {
     .loader('style-resources-loader')
     .options({
       patterns: [
-        path.resolve(__dirname, './src/assets/css/global.styl')
+        path.resolve(__dirname, './src/assets/stylus/global.styl')
       ],
     })
 }
