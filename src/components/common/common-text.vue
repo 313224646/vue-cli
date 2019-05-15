@@ -13,5 +13,6 @@ export default {
 .common-text
   color #00bcd4
   text-align center
-  line-height 40px
+  font-height(30)
+  m-ud(10)
 </style>
