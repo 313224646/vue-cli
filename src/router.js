@@ -9,14 +9,14 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: () => import('./views/Home'),
+      component: () => import('./views/index'),
       meta: {
         level: 1
       }
     },
     {
       path: '*',
-      component: () => import('./views/Home')
+      component: () => import('./views/index')
     }
   ],
   // 默认跳转页面滚动到顶部

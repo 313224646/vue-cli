@@ -10,9 +10,9 @@ module.exports = {
       }
     }
   },
-  chainWebpack: config => { // 全局引入样式表
+  chainWebpack: config => {
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
-    types.forEach(type => addStyleResource(config.module.rule('stylus').oneOf(type)))
+    types.forEach(type => addStyleResource(config.module.rule('stylus').oneOf(type))) // 全局引入样式表
     config.resolve.alias
       .set('@images', resolve('src/assets/images'))
       .set('@components', resolve('src/components'))
@@ -30,6 +30,5 @@ function addStyleResource(rule) {
 }
 
 function resolve (dir) {
-  console.log(__dirname)
   return path.join(__dirname, dir)
 }
