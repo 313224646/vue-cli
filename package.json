@@ -1,6 +1,6 @@
 {
   "name": "mobile-vue-template",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "wu shang hai <wx: 18620800179>",
   "private": true,
   "scripts": {
@@ -10,31 +10,30 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "vant": "^1.5.1",
-    "viewport-units-buggyfill": "^0.6.2",
-    "vue": "^2.5.17",
+    "vant": "^1.6.18",
+    "vue": "^2.6.10",
     "vue-axios": "^2.1.4",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.6"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.1",
-    "@vue/cli-plugin-eslint": "^3.0.1",
-    "@vue/cli-service": "^3.0.1",
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-plugin-eslint": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
     "babel-eslint": "^10.0.1",
     "babel-plugin-import": "^1.11.0",
-    "cssnano": "^4.1.7",
-    "cssnano-preset-advanced": "^4.0.5",
-    "eslint": "^5.8.0",
-    "eslint-plugin-vue": "^5.0.0-0",
-    "postcss-aspect-ratio-mini": "^0.0.2",
-    "postcss-cssnext": "^3.1.0",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-advanced": "^4.0.7",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.2.2",
+    "postcss-aspect-ratio-mini": "^1.0.1",
     "postcss-import": "^12.0.1",
-    "postcss-px-to-viewport": "^0.0.3",
+    "postcss-preset-env": "^6.6.0",
+    "postcss-px-to-viewport": "^1.1.0",
     "postcss-url": "^8.0.0",
     "postcss-viewport-units": "^0.1.6",
     "style-resources-loader": "^1.2.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.6.10"
   }
 }
