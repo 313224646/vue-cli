@@ -4,36 +4,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Document
-   ========================================================================== */
-
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
+  box-sizing: border-box;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
 }
 
-/* Sections
-   ========================================================================== */
-
-figure {
-  font-size: 0;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
 /**
  * Remove the margin in all browsers.
  */
  
-textarea{ 
+textarea { 
   resize: none;
 } 
 /**
@@ -60,11 +49,6 @@ a {
 /**
  * Remove the border on images inside links in IE 10.
  */
-
-img {
-  border-style: none;
-  display: block;
-}
 
 ::-webkit-file-upload-button {
   -webkit-appearance: button; /* 1 */
