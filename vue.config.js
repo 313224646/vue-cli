@@ -16,6 +16,7 @@ module.exports = {
     config.resolve.alias
       .set('@images', resolve('src/assets/images'))
       .set('@components', resolve('src/components'))
+      .set('@plugins', resolve('src/plugins'))
   }
 }
 
