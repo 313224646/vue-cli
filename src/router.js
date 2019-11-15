@@ -10,9 +10,6 @@ export default new Router({
     {
       path: '/',
       component: () => import('./views/index'),
-      meta: {
-        level: 1
-      }
     },
     {
       path: '*',

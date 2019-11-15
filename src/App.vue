@@ -14,7 +14,5 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '~@/assets/stylus/reset.styl'
+@import '~@/assets/stylus/index.styl'
 </style>
-
-
