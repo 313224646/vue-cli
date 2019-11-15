@@ -1,9 +1,9 @@
 <template>
   <div class="index">
-    <we-row>
-      <we-col class="col">ok</we-col>
-      <we-col class="col">hello</we-col>
-      <we-col class="col">fd</we-col>
+    <we-row justify="space-between">
+      <we-col>ok</we-col>
+      <we-col>hello</we-col>
+      <we-col>hi</we-col>
     </we-row>
   </div>
 </template>
@@ -25,7 +25,4 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.col
-  text-align center
-  background #cccccc
 </style>
