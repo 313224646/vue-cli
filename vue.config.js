@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   lintOnSave: false,
-  publicPath: process.env.VUE_APP_BASE_URL,
+  publicPath: process.env.VUE_APP_DOMAIN_URL,
   css: {
     loaderOptions: {
       less: {
@@ -12,22 +12,9 @@ module.exports = {
     }
   },
   chainWebpack: config => {
-    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
     config.resolve.alias
       .set('@images', resolve('src/assets/images'))
   },
-  configureWebpack: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: /(node_modules)/,
-        loader: 'webpack-atomizer-loader',
-        query: {
-          configPath: path.resolve('./atomCssConfig.js')
-        }
-      }
-    ]
-  }
 }
 
 function resolve (dir) {
