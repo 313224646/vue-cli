@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { Notify } from 'vant'
+import { Toast, Notify } from 'vant'
 
 // create an axios instance
 const service = axios.create({
@@ -10,6 +10,13 @@ const service = axios.create({
 // request interceptor
 service.interceptors.request.use(
   config => {
+    if (config.data && config.data.loading) {
+      Toast.loading({
+        duration: 0,
+        forbidClick: true,
+        message: '请稍等...'
+      })
+    }
     return config
   },
   error => {
@@ -21,17 +28,23 @@ service.interceptors.request.use(
 // response interceptor
 service.interceptors.response.use(
   response => {
+    Toast.clear()
     const res = response.data
-    if (res.status === 'success') {
-      return res.data ? JSON.parse(res.data) : res.data
+    if (res.code === 200) {
+      return res.data
     } else {
       Notify({ type: 'danger', message: res.msg })
       return Promise.reject(res.msg)
     }
   },
   err => {
-    Notify({ type: 'danger', message: err.message })
-    return Promise.reject(error)
+    Toast.clear()
+    if (err.message.indexOf('timeout') !== -1) {
+      Notify({ type: 'danger', message: '前方拥堵，请稍后再试。' })
+    } else {
+      Notify({ type: 'danger', message: err.message })
+    }
+    return Promise.reject(err)
   }
 )
 

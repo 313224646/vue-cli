@@ -13,7 +13,8 @@ module.exports = {
   },
   chainWebpack: config => {
     config.resolve.alias
-      .set('@images', resolve('src/assets/images'))
+      .set('@i', resolve('src/assets/images'))
+      .set('@c', resolve('src/components'))
   },
 }
 
