@@ -4,7 +4,7 @@
 ## 移动端适配
 采用`vw`进行适配，具体适配信息请看`postcss.config.js`，你可以在上面按需修改。
 ## UI组件库
-使用`Vant-UI`组件库，纯属个人喜好，但你变更。  
+使用`Vant-UI`组件库，纯属个人喜好，但你可以随时更改。  
 ```
 // 按需引入Demo
 import { Button } from 'vant'
@@ -16,8 +16,16 @@ components: {
 默认使用`vue-router`
 ## Vuex
 默认不使用，你有需要的话，它们放在`src\store`
+## 自动生成脚本
+`npm run create fileName type[page|component] `  
+搭配vue-cli使用，自动创建.vue文件  
+fileName: 文件名  
+type:
+1. page: 在views里面创建，并自动注入路由  
+2. component: 组件级，在components/page里面创建
+
 ## plugins
-关于插件，下面是我的常用清单：
+下面是我的常用清单：
 - 动画类
 - - [animate.js](https://www.npmjs.com/package/animate.css)
 - - [TweenMax.js](https://www.tweenmax.com.cn/)
@@ -35,3 +43,7 @@ components: {
 - UI库
 - - [Vant](https://youzan.github.io/vant/#/zh-CN/home)
 - - [Ant Design of Vue](https://www.antdv.com/docs/vue/introduce-cn/)
+
+## 待做.....
+1. 自动导入阿里图标的js文件
+2. 描述添加阿里图标的说明
